@@ -4,11 +4,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    render json: params
+    new_user = User.new(params.require(:users).permit(:name, :email))
+    new_user.save!
+    render json: new_user
   end
 
   def index
-    render plain: "I'm in the index action!"
+    @users = User.all
+    render json: @users 
   end
 
 end
