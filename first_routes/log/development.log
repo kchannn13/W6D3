@@ -336,3 +336,81 @@ Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 1266)
 ActionController::ParameterMissing - param is missing or the value is empty: users:
   app/controllers/users_controller.rb:7:in `create'
 
+Started POST "/users?name=Alex" for ::1 at 2023-02-15 17:14:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 1 pending migration:
+20230215213825_create_user.rb:
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7974280239715595190)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20230215213825)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230215213825"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7974280239715595190)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users?name=Alex" for ::1 at 2023-02-15 17:15:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2623)
+
+
+
+NoMethodError - undefined method `permit' for "Alex":String
+    new_user = User.new(params.require(:name).permit(:email))
+                                             ^^^^^^^:
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/users?name=Alex&email=alex@alex.com" for ::1 at 2023-02-15 17:16:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex", "email"=>"alex@alex.com"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 770)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/users?name=Alex" for ::1 at 2023-02-15 17:16:49 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 110)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/users?name=Alex&email=alex@alex.com" for ::1 at 2023-02-15 17:17:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex", "email"=>"alex@alex.com"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.4ms | Allocations: 5380)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/users?name=Alex" for ::1 at 2023-02-15 17:18:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2623)
+
+
+
+NoMethodError - undefined method `permit' for "Alex":String
+    new_user = User.new(params.require(:name).permit(:body))
+                                             ^^^^^^^:
+  app/controllers/users_controller.rb:7:in `create'
+

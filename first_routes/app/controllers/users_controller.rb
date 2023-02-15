@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.new(params.require(:users).permit(:name, :email))
+    new_user = User.new(params.require(:name).permit(:body))
     new_user.save!
     render json: new_user
   end
