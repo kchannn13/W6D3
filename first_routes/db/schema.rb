@@ -42,5 +42,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_191715) do
 
   add_foreign_key "artwork_shares", "users", column: "artwork_id"
   add_foreign_key "artwork_shares", "users", column: "viewer_id"
-  add_foreign_key "artworks", "users", column: "artist_id"
 end
