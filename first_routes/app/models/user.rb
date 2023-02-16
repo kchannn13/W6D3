@@ -22,7 +22,7 @@ class User < ApplicationRecord
   class_name: :ArtworkShare,
   dependent: :destroy
 
-  has_many :shares,
-  through: :artworks,
-  source: :artworks
+  has_many :shared_artworks,
+  through: :viewer,
+  source: :artwork
 end

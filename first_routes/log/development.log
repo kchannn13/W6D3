@@ -1987,3 +1987,27 @@ Processing by UsersController#index as */*
 Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 10.0ms | Allocations: 18456)
 
 
+Started GET "//artworks/140/users" for ::1 at 2023-02-16 15:44:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"artwork_id"=>"140"}
+  [1m[36mArtwork Load (1.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/UsersController.rb:8:in `index'
+Completed 404 Not Found in 17ms (ActiveRecord: 8.1ms | Allocations: 7465)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Artwork with 'id'=140:
+  app/controllers/UsersController.rb:8:in `index'
+
+Started GET "//artworks/14/users" for ::1 at 2023-02-16 15:45:07 -0500
+Processing by UsersController#index as */*
+  Parameters: {"artwork_id"=>"14"}
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/UsersController.rb:8:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/UsersController.rb:9:in `index'
+Completed 200 OK in 37ms (Views: 1.1ms | ActiveRecord: 10.4ms | Allocations: 12075)
+
+
+  [1m[36mArtworkShare Load (2.2ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares"[0m

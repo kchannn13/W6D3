@@ -14,18 +14,18 @@ class ArtworksController < ApplicationController
         end
       end
     
-      def show
-        render json: ArtworkShare.find(params[:id])
-      end
+      # def show
+      #   render json: ArtworkShare.find(params[:id])
+      # end
     
-      def update
-        artwork_shares = ArtworkShare.find(params[:id])
-        if artwork_shares.update(artwork_share_params)
-          render json: artwork_shares
-        else
-          render json: artwork_shares.errors.full_messages, status: :unprocessable_entity
-        end
-      end
+      # def update
+      #   artwork_shares = ArtworkShare.find(params[:id])
+      #   if artwork_shares.update(artwork_share_params)
+      #     render json: artwork_shares
+      #   else
+      #     render json: artwork_shares.errors.full_messages, status: :unprocessable_entity
+      #   end
+      # end
       
       def destroy
         artwork_shares = ArtworkShare.find(params[:id])
