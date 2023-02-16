@@ -616,3 +616,4 @@ Migrating to ChangeArtworks (20230216162104)
   [1m[36mArtwork Create (0.4ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "image_url", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "apple"], ["image_url", "pics.com"], ["artist_id", 2], ["created_at", "2023-02-16 16:28:13.429860"], ["updated_at", "2023-02-16 16:28:13.429860"]]
   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
