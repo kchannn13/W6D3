@@ -18,14 +18,13 @@ class Artwork < ApplicationRecord
   validates :title, :image_url, :artist_id, presence: true, uniqueness: {scope: :title}
 
   belongs_to :artist,
-  primary_key: :id,
-  foreign_key: :artist_id,
-  class_name: :User
+  inverse_of: :users
 
   has_many :artworks,
   primary_key: :id,
   foreign_key: :artwork_id,
   class_name: :ArtworkShare,
+  inverse_of: :artwork
   dependent: :destroy
 
   has_many :shared_viewers,

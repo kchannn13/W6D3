@@ -2011,3 +2011,8 @@ Completed 200 OK in 37ms (Views: 1.1ms | ActiveRecord: 10.4ms | Allocations: 120
 
 
   [1m[36mArtworkShare Load (2.2ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares"[0m
+Started GET "//artworkshares" for ::1 at 2023-02-16 16:17:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/artworkshares"):
+  
