@@ -34,6 +34,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :destroy]
   end
 
+  resources :comments do
+    resources :artworks, only: [:index]
+    resources :users, only: [:index]
+  end
+
   # resources :artwork_share, only: [:create, :destroy]
 end
 
