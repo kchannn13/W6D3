@@ -25,5 +25,6 @@ class Artwork < ApplicationRecord
   has_many :artworks,
   primary_key: :id,
   foreign_key: :artwork_id,
-  class_name: :ArtworkShare
+  class_name: :ArtworkShare,
+  dependent: :destroy
 end
