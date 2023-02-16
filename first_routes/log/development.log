@@ -414,3 +414,29 @@ NoMethodError - undefined method `permit' for "Alex":String
                                              ^^^^^^^:
   app/controllers/users_controller.rb:7:in `create'
 
+Started POST "/users?name=Alex&email=alex@alex.com" for ::1 at 2023-02-15 17:21:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex", "email"=>"alex@alex.com"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2623)
+
+
+
+NoMethodError - undefined method `permit' for "Alex":String
+    @new_user = User.new(params.require(:name).permit(:email))
+                                              ^^^^^^^:
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/users?name=Alex&email=alex@alex.com" for ::1 at 2023-02-15 17:24:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Alex", "email"=>"alex@alex.com"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2625)
+
+
+
+NoMethodError - undefined method `permit' for "Alex":String
+    user = User.new(params.require(:name).permit(:email))
+                                         ^^^^^^^:
+  app/controllers/users_controller.rb:7:in `create'
+
