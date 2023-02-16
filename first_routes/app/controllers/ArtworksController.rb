@@ -3,10 +3,12 @@ class ArtworksController < ApplicationController
         # render plain: "I'm in the index action!"
         # render json: Artwork.find(params[:id])
 
-        if User.id == Artwork.artist_id
-          render json: Artwork.find(params[:id])
-        else
-          render json: Artwork.all 
+        User.all.each do |user|  
+          if user.id == Artwork.find(params[:id])
+            render json: Artwork.find(params[:id])
+          else
+            render json: Artwork.all 
+          end
         end
       end
     
