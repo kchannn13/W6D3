@@ -1668,3 +1668,196 @@ Processing by ArtworksController#index as */*
 Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 1557)
 
 
+Started GET "//users/3/artworks(.:format)" for ::1 at 2023-02-16 14:56:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/3/artworks(.:format)"):
+  
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 14:56:56 -0500
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+  [1m[36mArtwork Load (1.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/ArtworksController.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 9.1ms | ActiveRecord: 10.0ms | Allocations: 8809)
+
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:00:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end'
+    end
+       ^:
+  app/controllers/ArtworksController.rb:46:in `'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:00:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3341)
+
+
+
+NameError - undefined local variable or method `artwork' for #<ArtworksController:0x000000000051b8>
+        if artwork.show(artwork_params)
+           ^^^^^^^
+Did you mean?  artwork_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:01:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3339)
+
+
+
+NameError - undefined local variable or method `artworks' for #<ArtworksController:0x000000000051b8>
+        if artworks.find(artwork_params)
+           ^^^^^^^^
+Did you mean?  artworks_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:02:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3341)
+
+
+
+NameError - undefined local variable or method `artwork' for #<ArtworksController:0x000000000051b8>
+        if artwork.find(params[:id])
+           ^^^^^^^
+Did you mean?  artwork_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:03:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3066)
+
+
+
+NoMethodError - undefined method `find' for #<ArtworksController:0x000000000051b8>
+        if self.find(params[:id])
+               ^^^^^:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:03:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+SyntaxError - syntax error, unexpected '(', expecting `then' or ';' or '\n'
+        if self(params[:id])
+               ^
+/Users/sabrinawdesmond/Desktop/Bootcamp/Week6/W6D3/first_routes/app/controllers/ArtworksController.rb:6: syntax error, unexpected ')', expecting `end'
+        if self(params[:id])
+                           ^
+/Users/sabrinawdesmond/Desktop/Bootcamp/Week6/W6D3/first_routes/app/controllers/ArtworksController.rb:8: else without rescue is useless
+        else
+        ^~~~
+/Users/sabrinawdesmond/Desktop/Bootcamp/Week6/W6D3/first_routes/app/controllers/ArtworksController.rb:47: syntax error, unexpected `end', expecting end-of-input
+    end
+    ^~~:
+  app/controllers/ArtworksController.rb:6:in `'
+
+Started GET "//users/3/artworks" for ::1 at 2023-02-16 15:04:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/ArtworksController.rb:9:in `index'
+Completed 200 OK in 17ms (Views: 5.5ms | ActiveRecord: 6.4ms | Allocations: 8834)
+
+
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:07:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3341)
+
+
+
+NameError - undefined local variable or method `artwork' for #<ArtworksController:0x000000000051b8>
+        if artwork.show(artwork_params)
+           ^^^^^^^
+Did you mean?  artwork_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:07:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/ArtworksController.rb:9:in `index'
+Completed 200 OK in 16ms (Views: 5.5ms | ActiveRecord: 5.4ms | Allocations: 8840)
+
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:08:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3263)
+
+
+
+NameError - undefined local variable or method `user_id' for #<ArtworksController:0x000000000051b8>
+        if user_id == artist_id
+           ^^^^^^^
+Did you mean?  user_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:08:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3349)
+
+
+
+NameError - undefined local variable or method `users' for #<ArtworksController:0x000000000051b8>
+        if users.id == artist_id
+           ^^^^^
+Did you mean?  users_url:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:08:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3391)
+
+
+
+NameError - undefined local variable or method `user' for #<ArtworksController:0x000000000051b8>
+        if user.id == artist_id
+           ^^^^
+Did you mean?  super:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:09:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6900)
+
+
+
+NoMethodError - undefined method `id' for User:Class
+Did you mean?  ids:
+  app/controllers/ArtworksController.rb:6:in `index'
+
+Started GET "//users/13/artworks" for ::1 at 2023-02-16 15:12:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"13"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6900)
+
+
+
+NoMethodError - undefined method `id' for User:Class
+Did you mean?  ids:
+  app/controllers/ArtworksController.rb:6:in `index'
+
