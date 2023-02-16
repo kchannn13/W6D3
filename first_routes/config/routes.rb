@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :artworks, only: [:index]
   end
+
+  resources :artworks do
+    resources :users, only: [:index]
+  end
 end
